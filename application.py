@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import pickle
 import pandas as pd
+from waitress import serve
 
 app = Flask(__name__)
 
@@ -47,4 +48,4 @@ def predict():
         return "Error"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
