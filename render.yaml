@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: car-price-predictor
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn application:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
